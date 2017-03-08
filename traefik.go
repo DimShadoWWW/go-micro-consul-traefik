@@ -110,8 +110,6 @@ func (c *traefikRegistry) Register(s *registry.Service, opts ...registry.Registe
 	tags = append(tags, encodeEndpoints(s.Endpoints)...)
 	tags = append(tags, encodeVersion(s.Version)...)
 
-	fmt.Printf("tags: %#v\n", tags)
-
 	var check *consul.AgentServiceCheck
 
 	// if the TTL is greater than 0 create an associated check
